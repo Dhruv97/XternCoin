@@ -3,6 +3,9 @@ var router = express.Router();
 var User = require('../models/user');
 var mid = require('../middleware');
 
+
+
+
 // GET /profile
 router.get('/profile', mid.requiresLogin, function(req, res, next) {
   User.findById(req.session.userId)
@@ -107,9 +110,10 @@ router.get('/about', function(req, res, next) {
   return res.render('about', { title: 'About' });
 });
 
-// GET /contact
-router.get('/contact', function(req, res, next) {
-  return res.render('contact', { title: 'Contact' });
+// GET /spend
+router.get('/spend', function(req, res, next) {
+  return res.render('spend', { title: 'Spend' });
 });
+
 
 module.exports = router;
