@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .main.container.clearfix
+    .row
+      .col-md-8.col-md-offset-2
+        h1.display-4
+          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
+          | #{name}
+        h2.xterncoins XternCoins
+        h3#coins 0
+
+        br
+        br
+        h2 How To Earn Coins
+        p Enter a number from 1-10 below. If you guess correctly, you will be awarded one XternCoin! 
+        p New numbers are generated each time you guess correctly, so you can keep earning as many coins as you want! 
+
+        br
+        br
+        input.form-control#guess(type='text' placeholder='Guess!')
+        br
+        br
+        button.btn.btn-info-outline.btn-lg#btnEarnCoins Earn Coins
+        br
+        br
+        br
+        h3 Spend Your XternCoins!
+        br
+      
+        a.btn.btn-info-outline.btn-lg(href="/spend") Spend
